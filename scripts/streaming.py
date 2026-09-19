@@ -1,8 +1,15 @@
+import sys
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import requests
 import json
+from config import MODEL_NAME
 
 OLLAMA_URL = "http://localhost:11434/api/chat"
-MODEL_NAME = "gemma4:e4b"   # Change to your pulled model
 
 
 def chat_with_ollama(prompt):

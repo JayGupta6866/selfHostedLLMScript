@@ -1,6 +1,12 @@
-import requests
+import sys
+from pathlib import Path
 
-MODEL_NAME = "gemma4:e4b"
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+import requests
+from config import MODEL_NAME
 
 url = "http://localhost:11434/api/chat"
 

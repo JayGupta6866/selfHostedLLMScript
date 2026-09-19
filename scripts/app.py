@@ -1,6 +1,12 @@
-import ollama
+import sys
+from pathlib import Path
 
-MODEL_NAME = "gemma4:e4b"   # Change this to your installed model
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+import ollama
+from config import MODEL_NAME
 
 prompt = """
 Explain what Retrieval-Augmented Generation (RAG) is

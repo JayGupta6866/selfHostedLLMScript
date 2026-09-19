@@ -12,7 +12,7 @@ payload = {
             "content": "Explain RAG in simple terms."
         }
     ],
-    "stream": False
+    "stream": True
 }
 
 response = requests.post(url, json=payload)
